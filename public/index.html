@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Media Watch</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <div class="row">
+      <h1>Media Watch</h1>
+      <input id="q" type="search" placeholder="Search titles…  ( / )" autocomplete="off">
+      <button id="rescan" class="btn" title="Rescan the NAS and fetch metadata for new titles">Rescan</button>
+    </div>
+    <div class="row filters">
+      <nav id="tabs" class="tabs">
+        <button data-cat="All" class="active">All <span></span></button>
+        <button data-cat="Movies">Movies <span></span></button>
+        <button data-cat="Series">Series <span></span></button>
+        <button data-cat="Anime">Anime <span></span></button>
+      </nav>
+      <select id="kind" title="Type">
+        <option value="">Movies + TV</option>
+        <option value="movie">Movies only</option>
+        <option value="tv">TV only</option>
+      </select>
+      <select id="genre" title="Genre"><option value="">All genres</option></select>
+      <select id="sort" title="Sort">
+        <option value="title">Title A–Z</option>
+        <option value="year">Year (newest)</option>
+        <option value="rating">Rating</option>
+        <option value="added">Recently added</option>
+        <option value="size">File size</option>
+      </select>
+      <button id="order" class="btn icon" title="Reverse order">⇅</button>
+      <label class="chk"><input type="checkbox" id="unmatched"> Unmatched</label>
+      <span id="count" class="muted"></span>
+    </div>
+    <div id="notice" class="notice" hidden></div>
+  </header>
+
+  <main id="grid" class="grid"></main>
+
+  <dialog id="detail">
+    <form method="dialog"><button class="close" aria-label="Close">✕</button></form>
+    <div id="detail-body"></div>
+  </dialog>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>

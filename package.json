@@ -1,0 +1,19 @@
+{
+  "name": "media-watch",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Fast local browser for the NAS movie/series/anime library, enriched with TMDB metadata",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "UV_THREADPOOL_SIZE=64 node --env-file-if-exists=.env src/server.js",
+    "dev": "UV_THREADPOOL_SIZE=64 node --watch --env-file-if-exists=.env src/server.js",
+    "scan": "UV_THREADPOOL_SIZE=64 node --env-file-if-exists=.env src/scan-cli.js",
+    "test": "node src/parse.js --test"
+  },
+  "dependencies": {
+    "express": "^5.3.0"
+  }
+}
